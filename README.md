@@ -27,22 +27,22 @@ npm run build && npm run preview
 
 1. Выполнится приведение типов к строке и конкатенация
     ```js
-    console.log([1, 2, 3] + [4, 5, 6]); // '1,2,34,5,6'
+    console.log([1, 2, 3] + [4, 5, 6]) // '1,2,34,5,6'
     ```
 2. Присваивание объектов происходит по ссылке. (в переменной `b` лежит ссылка на значение `a`)
 
     ```js
-    var a = { b: 1 };
-    var b = a;
+    var a = { b: 1 }
+    var b = a
 
-    b.b = 2;
+    b.b = 2
 
-    console.log(a); // { b: 2 }
+    console.log(a) // { b: 2 }
     ```
 
 3. Не пропускает `00.1`, `0.0.1`, `0.1000`
     ```js
-    /(0|[1-9]\d*)([.,])([0-9]{1,3})/g;
+    /(0|[1-9]\d*)([.,])([0-9]{1,3})/g
     ```
 4. Строка проверяется на наличие:
 
@@ -54,19 +54,19 @@ npm run build && npm run preview
     - anchor'а
 
     ```js
-    /(https|http):\/\/(www\.)?([-a-zA-Z0-9]+\.)+([a-z]{2,6}(:\d+)?)(\/[a-zA-Z0-9]*)*(\?[a-zA-Z0-9@:%_+.~#?&/=-]*)?/g;
+    /(https|http):\/\/(www\.)?([-a-zA-Z0-9]+\.)+([a-z]{2,6}(:\d+)?)(\/[a-zA-Z0-9]*)*(\?[a-zA-Z0-9@:%_+.~#?&/=-]*)?/g
     ```
 
 5. Function и var имеют механизм hoisting'а, поэтому доступны до своего объявления
 
     ```js
     function setText(message) {
-        text = message;
+        text = message
     }
 
-    var text = 'Текст';
+    var text = 'Текст'
 
-    console.log(setText('Сообщение')); // 'Сообщение'
+    console.log(setText('Сообщение')) // 'Сообщение'
     ```
 
 6. Возвращает массив артикулов строкового типа
@@ -74,9 +74,9 @@ npm run build && npm run preview
     ```js
     /** @return {string[]} */
     function getVendorList() {
-        const productList = document.querySelectorAll('._product');
+        const productList = document.querySelectorAll('._product')
 
-        return Array.from(productList).map((product) => product.dataset?.id);
+        return Array.from(productList).map((product) => product.dataset?.id)
     }
     ```
 
@@ -85,15 +85,15 @@ npm run build && npm run preview
     ```js
     /** @return {Record<string, string>} */
     function getProperties() {
-        const properties = {};
+        const properties = {}
 
-        const namePropertyList = document.querySelectorAll('.parameter-name');
-        const valuePropertyList = document.querySelectorAll('.parameter-name ~ .parameter-value');
+        const namePropertyList = document.querySelectorAll('.parameter-name')
+        const valuePropertyList = document.querySelectorAll('.parameter-name ~ .parameter-value')
 
         for (const [i, nameProperty] of namePropertyList.entries()) {
-            properties[nameProperty.firstChild.textContent.trim()] = valuePropertyList[i].firstChild.textContent.trim();
+            properties[nameProperty.firstChild.textContent.trim()] = valuePropertyList[i].firstChild.textContent.trim()
         }
 
-        return properties;
+        return properties
     }
     ```
