@@ -1,0 +1,53 @@
+:root {
+    --color-text-primary: #333333;
+    --color-text-secondary: #aaaaaa;
+    --color-text-hover: #125bae;
+
+    --color-accent: #7397f5;
+
+    --color-icons: #cbcbcb;
+    --color-border: #d5d5d5;
+    --color-bg-primary: #f8f8fa;
+    --color-bg-secondary: #fcfcfd;
+    --color-bg-tertiary: #e2efff;
+    --color-white: #ffffff;
+
+    /*  unused  */
+    --color-font-history: #5a0488;
+    --color-scroll-bar: #f2f2f2;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+
+    font-size: 16px;
+    font-family: Roboto, Arial, sans-serif;
+    color: inherit;
+}
+
+body {
+    color: var(--color-text-primary);
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: scale-down;
+}
+
+input {
+    outline: 0;
+    border: 0;
+}
