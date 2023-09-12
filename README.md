@@ -76,7 +76,7 @@ npm run build && npm run preview
     function getVendorList() {
         const productList = document.querySelectorAll('._product')
 
-        return Array.from(productList).map((product) => product.dataset?.id)
+        return Array.from(productList).map((product) => '0' + product.dataset?.id)
     }
     ```
 
