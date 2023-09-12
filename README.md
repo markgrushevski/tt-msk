@@ -72,11 +72,11 @@ npm run build && npm run preview
 6. Возвращает массив артикулов строкового типа
 
     ```js
-    /** @return {string[]} */
+    /** @return {(string|null)[]} */
     function getVendorList() {
         const productList = document.querySelectorAll('._product')
 
-        return Array.from(productList).map((product) => '0' + product.dataset?.id)
+        return Array.from(productList).map((product) => product.dataset?.id ? `0${product.dataset.id}` : null)
     }
     ```
 
